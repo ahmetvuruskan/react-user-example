@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Form from "./Components/Form/UserInputs";
-
-const addToList = (formData) => {
-    console.log(formData);
-}
-
+import UserList from "./Components/List/UserList";
 function App() {
+    const [userData, setUserData] = useState([])
+    const addToList = (formData) => {
+        setUserData((prevState) => {
+            return [
+                ...prevState,
+                formData
+            ]
+        })
+    }
     return (
         <div>
             <Form onAdd={addToList}/>
+            <UserList users={userData}></UserList>
         </div>
     );
 }

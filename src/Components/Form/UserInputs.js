@@ -6,7 +6,8 @@ import Button from "../Buttons/Button";
 const UserInputs = (props) => {
     const [formData, setFormData] = useState({
         name: '',
-        age: ''
+        age: '',
+        id: Math.round(Math.random() * 1000).toFixed().toString()
     });
     const submitHandler = (event) => {
         event.preventDefault();
