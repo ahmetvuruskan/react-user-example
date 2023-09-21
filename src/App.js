@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,Fragment} from 'react';
 import Form from "./Components/Form/UserInputs";
 import UserList from "./Components/List/UserList";
 import ErrorModal from "./Components/ErrorModal/ErrorModal"
@@ -15,11 +15,10 @@ function App() {
         })
     }
     return (
-        <Wrapper>
-
+        <Fragment>
             <Form onAdd={addToList}/>
             <UserList users={userData}></UserList>
-        </Wrapper>
+        </Fragment>
     );
 }
 
